@@ -113,7 +113,7 @@ html.sl-larger-text .${t.chip} { font-size: 12px !important; }
 }
 function p() {
 	let { Panel: e, Rating: i } = r.components, { useCatalogStore: a, useUIStore: d } = r.stores, f = a((e) => e.photos), p = d((e) => e.filter), g = d((e) => e.setFilter), _ = d((e) => e.clearFilters), v = d((e) => e.activeFolder), y = d((e) => e.setActiveFolder), b = f.filter((e) => e.flag === "pick").length, x = f.filter((e) => e.flag === "reject").length, S = f.filter((e) => e.rating > 0).length, C = t(p);
-	return /* @__PURE__ */ n.createElement("div", { className: o.root }, /* @__PURE__ */ n.createElement(e, { title: "Catalog" }, /* @__PURE__ */ n.createElement("div", { className: o.scopes }, /* @__PURE__ */ n.createElement(h, {
+	return /* @__PURE__ */ n.createElement("div", { className: o.root }, /* @__PURE__ */ n.createElement(e, { title: "Catalogue" }, /* @__PURE__ */ n.createElement("div", { className: o.scopes }, /* @__PURE__ */ n.createElement(h, {
 		label: "All Photos",
 		count: f.length,
 		active: !C && v === null,

@@ -3,7 +3,7 @@
 The Library **Filters** panel: narrow the grid by flag, rating, colour label
 and keyword.
 
-- **Catalog:** All Photos, Picks, Rejects and Rated, each with its photo
+- **Catalogue:** All Photos, Picks, Rejects and Rated, each with its photo
   count. Picks, Rejects and Rated toggle on and off. All Photos clears every
   filter and the folder scope.
 - **Rating:** pick a star threshold and a comparison. The button beside

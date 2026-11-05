@@ -23,7 +23,7 @@ export interface StoreApi<T> {
 export type ColorLabel = "none" | "red" | "yellow" | "green" | "blue" | "purple";
 export type FlagStatus = "none" | "pick" | "reject";
 
-/** A catalog photo. Core's record carries much more, which this extension
+/** A catalogue photo. Core's record carries much more, which this extension
  *  never reads. */
 export interface CatalogPhoto {
   rating: number;

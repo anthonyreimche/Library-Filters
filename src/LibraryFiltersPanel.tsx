@@ -3,7 +3,7 @@
 // attribution-preservation term (GPL v3 §7b) — see LICENSE. This notice must
 // be preserved in derived versions.
 
-// The Library "Filters" panel: quick catalog scopes (All Photos, Picks,
+// The Library "Filters" panel: quick catalogue scopes (All Photos, Picks,
 // Rejects, Rated) and the rating, label and keyword filters over the grid.
 
 import type { KeyboardEvent } from "react";
@@ -137,7 +137,7 @@ export function LibraryFiltersPanel() {
 
   return (
     <div className={CLASSES.root}>
-      <Panel title="Catalog">
+      <Panel title="Catalogue">
         <div className={CLASSES.scopes}>
           <SidebarItem
             label="All Photos"

@@ -1,7 +1,7 @@
 {
   "name": "safelight-library-filters",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Library Filters extension for Safelight: filter the grid by rating, flag, label and keyword.",
   "type": "module",
   "scripts": {

@@ -3,7 +3,7 @@
 // attribution-preservation term (GPL v3 §7b) — see LICENSE. This notice must
 // be preserved in derived versions.
 
-// Registers the Library "Filters" panel (catalog scopes and the rating, label
+// Registers the Library "Filters" panel (catalogue scopes and the rating, label
 // and keyword filters). It was core's built-in `core.filters` until Safelight
 // 3.2.0 and keeps that panel id, so saved layouts keep it where it was.
 

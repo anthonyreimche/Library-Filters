@@ -1,5 +1,5 @@
-// The Filters panel in a DOM, over real zustand UI and catalog stores: the
-// catalog scopes with their counts and toggles, the rating operator and stars,
+// The Filters panel in a DOM, over real zustand UI and catalogue stores: the
+// catalogue scopes with their counts and toggles, the rating operator and stars,
 // the colour labels, the keyword field with its suggestions and chips, and
 // Clear filters, each writing the UI store's Library filter as core's panel did.
 
@@ -42,10 +42,10 @@ const suggestionLabels = () =>
   [...document.querySelectorAll(`.${CLASSES.suggestion}`)].map((b) => b.firstChild?.textContent);
 const filterOf = (rig: Rig) => rig.ui.getState().filter;
 
-describe("LibraryFiltersPanel: catalog scopes", () => {
-  it("renders the Catalog and Filters sections through core's Panel", () => {
+describe("LibraryFiltersPanel: catalogue scopes", () => {
+  it("renders the Catalogue and Filters sections through core's Panel", () => {
     mount();
-    expect(screen.getByRole("region", { name: "Catalog" })).toBeTruthy();
+    expect(screen.getByRole("region", { name: "Catalogue" })).toBeTruthy();
     expect(screen.getByRole("region", { name: "Filters" })).toBeTruthy();
   });
 

@@ -1,7 +1,7 @@
 # Library Filters for Safelight
 
-The Library **Filters** panel: narrow the grid by flag, rating, colour label
-and keyword.
+The Library **Filters** panel: narrow the grid by flag, rating, colour label,
+edits and keyword.
 
 - **Catalogue:** All Photos, Picks, Rejects and Rated, each with its photo
   count. Picks, Rejects and Rated toggle on and off. All Photos clears every
@@ -11,6 +11,8 @@ and keyword.
   clears it.
 - **Label:** click a colour to show only photos with that label, and click it
   again to show all.
+- **Edits:** All, Edited (only photos you've edited) or Unedited (only those
+  you haven't, or whose every edit you undid). Needs Safelight 3.2.6.
 - **Keyword:** type to see matching keywords, most-used first. Enter or a
   comma adds one, and a photo must carry every keyword you add. Backspace in
   the empty field removes the last one. The field shows only once a photo in

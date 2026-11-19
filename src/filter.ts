@@ -15,5 +15,11 @@ export function ratingFilterActive(f: LibraryFilter): boolean {
 }
 
 export function isFilterActive(f: LibraryFilter): boolean {
-  return ratingFilterActive(f) || f.flag !== "any" || f.label !== "any" || f.keywords.length > 0;
+  return (
+    ratingFilterActive(f) ||
+    f.flag !== "any" ||
+    f.label !== "any" ||
+    f.keywords.length > 0 ||
+    f.edited !== "any"
+  );
 }

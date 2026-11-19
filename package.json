@@ -1,8 +1,8 @@
 {
   "name": "safelight-library-filters",
   "private": true,
-  "version": "1.0.1",
-  "description": "Library Filters extension for Safelight: filter the grid by rating, flag, label and keyword.",
+  "version": "1.1.0",
+  "description": "Library Filters extension for Safelight: filter the grid by rating, flag, label, keyword and edits.",
   "type": "module",
   "scripts": {
     "build": "vite build",

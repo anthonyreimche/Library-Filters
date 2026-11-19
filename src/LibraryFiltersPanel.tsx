@@ -4,12 +4,12 @@
 // be preserved in derived versions.
 
 // The Library "Filters" panel: quick catalogue scopes (All Photos, Picks,
-// Rejects, Rated) and the rating, label and keyword filters over the grid.
+// Rejects, Rated) and the rating, label, edits and keyword filters over the grid.
 
 import type { KeyboardEvent } from "react";
 import { isFilterActive } from "./filter";
 import { React, api } from "./rt";
-import type { ColorLabel, RatingOp, UiTokens } from "./safelight";
+import type { ColorLabel, EditedFilter, RatingOp, SelectOption, UiTokens } from "./safelight";
 
 const P = "safelight-filters";
 
@@ -54,6 +54,12 @@ export const RATING_OP_SYMBOL: Record<RatingOp, string> = {
   eq: "=",
   neq: "≠",
 };
+
+const EDITED_OPTIONS: SelectOption[] = [
+  { value: "any", label: "All" },
+  { value: "edited", label: "Edited" },
+  { value: "unedited", label: "Unedited" },
+];
 
 const MAX_SUGGESTIONS = 6;
 
@@ -117,6 +123,7 @@ html.sl-larger-text .${c.chip} { font-size: 12px !important; }
 
 export function LibraryFiltersPanel() {
   const { Panel, Rating } = api.components;
+  const { Select } = api.ui;
   const { useCatalogStore, useUIStore } = api.stores;
   const photos = useCatalogStore((s) => s.photos);
   const filter = useUIStore((s) => s.filter);
@@ -199,6 +206,17 @@ export function LibraryFiltersPanel() {
                 />
               ))}
             </div>
+          </div>
+
+          <div className={CLASSES.row}>
+            <span className={CLASSES.fieldLabel}>Edits</span>
+            <Select
+              value={filter.edited}
+              onChange={(edited) => setFilter({ edited: edited as EditedFilter })}
+              ariaLabel="Filter by edits"
+              style={{ width: "auto" }}
+              options={EDITED_OPTIONS}
+            />
           </div>
 
           <KeywordFilterField />

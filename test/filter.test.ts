@@ -25,6 +25,11 @@ describe("isFilterActive", () => {
     expect(isFilterActive(filter({ label: "red" }))).toBe(true);
     expect(isFilterActive(filter({ keywords: ["sky"] }))).toBe(true);
   });
+
+  it("counts the Edits filter either way", () => {
+    expect(isFilterActive(filter({ edited: "edited" }))).toBe(true);
+    expect(isFilterActive(filter({ edited: "unedited" }))).toBe(true);
+  });
 });
 
 describe("ratingFilterActive", () => {

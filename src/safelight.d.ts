@@ -10,7 +10,7 @@
 // Extensions are standalone bundles, so the host's source is not on the type
 // path; React types come from @types/react (dev only).
 
-import type { ComponentType, ReactNode } from "react";
+import type { ComponentType, CSSProperties, ReactNode } from "react";
 
 export interface StoreApi<T> {
   (): T;
@@ -39,6 +39,7 @@ export interface CatalogStoreState {
 export type FlagFilter = "any" | "pick" | "reject";
 export type LabelFilter = "any" | ColorLabel;
 export type RatingOp = "lt" | "lte" | "gt" | "gte" | "eq" | "neq";
+export type EditedFilter = "any" | "edited" | "unedited";
 
 /** The Library grid's filter. */
 export interface LibraryFilter {
@@ -49,6 +50,8 @@ export interface LibraryFilter {
   label: LabelFilter;
   /** A photo must carry all of these (case-insensitive). */
   keywords: string[];
+  /** Only photos with an edit, or only those without. */
+  edited: EditedFilter;
 }
 
 export interface UIStoreState {
@@ -117,13 +120,29 @@ export interface RatingProps {
   size?: "sm" | "md";
 }
 
+export interface SelectOption {
+  value: string;
+  label: string;
+  disabled?: boolean;
+}
+
+/** Core's dropdown (api.ui.Select). */
+export interface SelectProps {
+  value: string;
+  onChange: (value: string) => void;
+  options?: SelectOption[];
+  className?: string;
+  style?: CSSProperties;
+  ariaLabel?: string;
+}
+
 export interface SafelightAPI {
   version: 1;
   extensionId: string;
   react: typeof import("react");
   registerPanel(c: PanelContribution): void;
   registerStylesheet(c: StylesheetContribution): void;
-  ui: { tokens: UiTokens };
+  ui: { tokens: UiTokens; Select: ComponentType<SelectProps> };
   components: {
     Panel: ComponentType<PanelProps>;
     Rating: ComponentType<RatingProps>;

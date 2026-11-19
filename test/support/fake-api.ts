@@ -15,6 +15,7 @@ import type {
   PanelProps,
   RatingProps,
   SafelightAPI,
+  SelectProps,
   StoreApi,
   StylesheetContribution,
   UIStoreState,
@@ -43,6 +44,7 @@ export const NO_FILTER: LibraryFilter = {
   flag: "any",
   label: "any",
   keywords: [],
+  edited: "any",
 };
 
 export type UIAction =
@@ -93,6 +95,15 @@ function FakeRating({ value, onChange }: RatingProps) {
   );
 }
 
+/** Core's dropdown as a native select, with the same value contract. */
+function FakeSelect({ value, onChange, options = [], ariaLabel }: SelectProps) {
+  return React.createElement(
+    "select",
+    { value, "aria-label": ariaLabel, onChange: (e: { target: { value: string } }) => onChange(e.target.value) },
+    options.map((o) => React.createElement("option", { key: o.value, value: o.value }, o.label)),
+  );
+}
+
 export function fakeApi({
   photos = [],
   filter = {},
@@ -124,7 +135,7 @@ export function fakeApi({
     react: React,
     registerPanel: (c) => void panels.push(c),
     registerStylesheet: (c) => void stylesheets.push(c),
-    ui: { tokens: TOKENS },
+    ui: { tokens: TOKENS, Select: FakeSelect },
     components: { Panel: FakePanel, Rating: FakeRating },
     stores: { useCatalogStore: catalog, useUIStore: ui },
   };

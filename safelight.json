@@ -1,14 +1,14 @@
 {
   "id": "safelight.filters",
   "name": "Library Filters",
-  "version": "1.0.1",
-  "description": "Filter the grid by rating, flag and label.",
+  "version": "1.1.0",
+  "description": "Filter the grid by rating, flag, label, keyword and edits.",
   "author": "Anthony Reimche",
   "main": "dist/index.js",
   "license": "GPL-3.0-only",
   "categories": ["library"],
-  "keywords": ["filter", "filters", "rating", "stars", "flag", "picks", "rejects", "colour label", "keyword"],
+  "keywords": ["filter", "filters", "rating", "stars", "flag", "picks", "rejects", "colour label", "keyword", "edited"],
   "repository": "anthonyreimche/Library-Filters",
   "worksWith": ["anthonyreimche/Library"],
-  "minAppVersion": "3.2.0"
+  "minAppVersion": "3.2.6"
 }

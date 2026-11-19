@@ -173,6 +173,31 @@ describe("LibraryFiltersPanel: Clear filters", () => {
   });
 });
 
+describe("LibraryFiltersPanel: edits filter", () => {
+  const editsSelect = () => screen.getByLabelText<HTMLSelectElement>("Filter by edits");
+
+  it("offers all photos, only edited ones, or only unedited ones", () => {
+    mount();
+    const options = [...editsSelect().options].map((o) => [o.value, o.textContent]);
+    expect(options).toEqual([
+      ["any", "All"],
+      ["edited", "Edited"],
+      ["unedited", "Unedited"],
+    ]);
+    expect(editsSelect().value).toBe("any");
+  });
+
+  it("writes the choice to the Library filter, which Clear filters resets", () => {
+    const rig = mount();
+    fireEvent.change(editsSelect(), { target: { value: "unedited" } });
+    expect(rig.calls).toEqual([{ setFilter: { edited: "unedited" } }]);
+    expect(editsSelect().value).toBe("unedited");
+    expect(clearButton().disabled).toBe(false);
+    fireEvent.click(clearButton());
+    expect(editsSelect().value).toBe("any");
+  });
+});
+
 describe("LibraryFiltersPanel: keyword filter", () => {
   it("is hidden while no photo has a keyword, and appears when one does", () => {
     const rig = mount({ photos: [photo()] });
